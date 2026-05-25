@@ -1,0 +1,2990 @@
+
+
+import os
+
+# Create output directory
+os.makedirs('/mnt/agents/output', exist_ok=True)
+
+# ==================== INDEX.HTML ====================
+index_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidura College - Excellence in Education</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Popup -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Registration Successful!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge scroll-reveal">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Grades 6-11 Private Tuition</span>
+            </div>
+            <h1 class="hero-title scroll-reveal">
+                <span class="title-line">Welcome to</span>
+                <span class="title-line highlight">Vidura College</span>
+            </h1>
+            <p class="hero-slogan scroll-reveal">Empowering Young Minds for a Brighter Tomorrow</p>
+            <p class="hero-desc scroll-reveal">Premium private education in Mathematics, Science, English, Tamil & History for students across Sri Lanka. Online & Physical classes available.</p>
+            <div class="hero-buttons scroll-reveal">
+                <a href="courses.html" class="btn btn-primary">
+                    <span>Join Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    <span>Contact Us</span>
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <div class="hero-stats scroll-reveal">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Expert Teachers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="subjects-section" id="subjects">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Our Subjects</span>
+                <h2 class="section-title">Comprehensive Curriculum</h2>
+                <p class="section-desc">Expert instruction across all major subjects for Grades 6-11</p>
+            </div>
+            <div class="subjects-grid">
+                <div class="subject-card scroll-reveal" data-delay="0">
+                    <div class="subject-icon math">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <p>From algebra to advanced calculus, build strong mathematical foundations.</p>
+                    <div class="subject-meta">
+                        <span><i class="fas fa-laptop"></i> Online</span>
+                        <span><i class="fas fa-building"></i> Physical</span>
+                    </div>
+                </div>
+                <div class="subject-card scroll-reveal" data-delay="100">
+                    <div class="subject-icon science">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science</h3>
+                    <p>Physics, Chemistry, and Biology with hands-on experiments and theory.</p>
+                    <div class="subject-meta">
+                        <span><i class="fas fa-laptop"></i> Online</span>
+                        <span><i class="fas fa-building"></i> Physical</span>
+                    </div>
+                </div>
+                <div class="subject-card scroll-reveal" data-delay="200">
+                    <div class="subject-icon english">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>English</h3>
+                    <p>Grammar, literature, and communication skills for academic excellence.</p>
+                    <div class="subject-meta">
+                        <span><i class="fas fa-laptop"></i> Online</span>
+                        <span><i class="fas fa-building"></i> Physical</span>
+                    </div>
+                </div>
+                <div class="subject-card scroll-reveal" data-delay="300">
+                    <div class="subject-icon tamil">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Tamil</h3>
+                    <p>Native language proficiency with reading, writing, and cultural studies.</p>
+                    <div class="subject-meta">
+                        <span><i class="fas fa-laptop"></i> Online</span>
+                        <span><i class="fas fa-building"></i> Physical</span>
+                    </div>
+                </div>
+                <div class="subject-card scroll-reveal" data-delay="400">
+                    <div class="subject-icon history">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>History</h3>
+                    <p>Explore Sri Lankan and world history with engaging storytelling.</p>
+                    <div class="subject-meta">
+                        <span><i class="fas fa-laptop"></i> Online</span>
+                        <span><i class="fas fa-building"></i> Physical</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Online & Physical Classes</h2>
+                <p class="section-desc">Flexible learning options tailored to your needs</p>
+            </div>
+            <div class="features-wrapper">
+                <div class="feature-block scroll-reveal">
+                    <div class="feature-visual online-visual">
+                        <div class="feature-icon-large">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-el"><i class="fas fa-video"></i></div>
+                            <div class="float-el"><i class="fas fa-comments"></i></div>
+                            <div class="float-el"><i class="fas fa-cloud"></i></div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Online Classes</h3>
+                        <p>Learn from anywhere with our interactive virtual classroom. Live sessions, recorded lessons, and digital resources at your fingertips.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Live interactive sessions</li>
+                            <li><i class="fas fa-check"></i> Recorded lesson access</li>
+                            <li><i class="fas fa-check"></i> Digital study materials</li>
+                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-block reverse scroll-reveal">
+                    <div class="feature-visual physical-visual">
+                        <div class="feature-icon-large">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="float-el"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div class="float-el"><i class="fas fa-users"></i></div>
+                            <div class="float-el"><i class="fas fa-book"></i></div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Physical Classes</h3>
+                        <p>Experience traditional classroom learning with modern facilities. Face-to-face interaction for deeper understanding and peer collaboration.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Modern classrooms</li>
+                            <li><i class="fas fa-check"></i> Lab facilities</li>
+                            <li><i class="fas fa-check"></i> Peer interaction</li>
+                            <li><i class="fas fa-check"></i> Library access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Student Success Stories</h2>
+                <p class="section-desc">Hear from our students and parents</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Vidura College helped me improve my Mathematics grade from a C to an A. The teachers are incredibly patient and explain concepts clearly."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div class="author-info">
+                                <h4>Sanduni K.</h4>
+                                <span>Grade 11 Student</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The online classes are fantastic! I can attend from home and still get the same quality education as physical classes. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RP</div>
+                            <div class="author-info">
+                                <h4>Rajesh P.</h4>
+                                <span>Grade 9 Student</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"My daughter's English improved dramatically after joining Vidura College. The teachers truly care about each student's progress."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NM</div>
+                            <div class="author-info">
+                                <h4>Nalini M.</h4>
+                                <span>Parent</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The Science practical sessions are amazing. I finally understand Chemistry thanks to the hands-on experiments at Vidura College."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AT</div>
+                            <div class="author-info">
+                                <h4>Ahamed T.</h4>
+                                <span>Grade 10 Student</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn prev" id="testPrev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testDots"></div>
+                    <button class="testimonial-btn next" id="testNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Gallery</span>
+                <h2 class="section-title">Our Campus Life</h2>
+                <p class="section-desc">Glimpses of learning and achievement</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large scroll-reveal" data-delay="0">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Classroom Learning</span>
+                    </div>
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-reveal" data-delay="100">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Science Lab</span>
+                    </div>
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-reveal" data-delay="200">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Online Session</span>
+                    </div>
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-reveal" data-delay="300">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Library</span>
+                    </div>
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-reveal" data-delay="400">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Graduation</span>
+                    </div>
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Find answers to common questions</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item scroll-reveal" data-delay="0">
+                    <button class="faq-question">
+                        <span>What grades do you teach?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide private tuition for students in Grades 6 through 11, covering all major subjects including Mathematics, Science, English, Tamil, and History.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal" data-delay="100">
+                    <button class="faq-question">
+                        <span>Do you offer both online and physical classes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer both online classes via interactive video sessions and physical classes at our institute. You can choose the mode that best suits your needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal" data-delay="200">
+                    <button class="faq-question">
+                        <span>How do I register for classes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can register by contacting us via WhatsApp at 0781536400, filling out the contact form on our website, or visiting our physical location.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal" data-delay="300">
+                    <button class="faq-question">
+                        <span>What are the class timings?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Classes are scheduled on weekdays and weekends with flexible timing options. Morning, afternoon, and evening batches are available to accommodate different schedules.</p>
+                    </div>
+                </div>
+                <div class="faq-item scroll-reveal" data-delay="400">
+                    <button class="faq-question">
+                        <span>Are the teachers qualified?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our teachers are highly qualified with relevant degrees and extensive teaching experience. Many hold postgraduate qualifications in their respective fields.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content scroll-reveal">
+                <h2>Ready to Excel in Your Studies?</h2>
+                <p>Join Vidura College today and take the first step towards academic excellence.</p>
+                <div class="cta-buttons">
+                    <a href="courses.html" class="btn btn-white">
+                        <span>Enroll Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/94781536400" target="_blank" class="btn btn-outline-white">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014. We provide premium private tuition for Grades 6-11 in Sri Lanka.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
+    f.write(index_html)
+
+print("index.html created successfully")
+
+# ==================== ABOUT.HTML ====================
+about_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vidura College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Action Successful!</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <h1 class="scroll-reveal">About Us</h1>
+            <p class="scroll-reveal">Discover the story behind Vidura College</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro scroll-reveal">
+                <div class="about-intro-text">
+                    <span class="section-tag">Our Story</span>
+                    <h2>Building Future Leaders Since 2014</h2>
+                    <p>Vidura College was founded with a vision to provide exceptional private education to students across Sri Lanka. What started as a small tutoring center has grown into a premier educational institution serving hundreds of students from Grades 6 to 11.</p>
+                    <p>Our dedicated team of qualified educators brings passion, expertise, and innovation to every classroom session. We believe that every student has the potential to excel, and our mission is to unlock that potential through personalized attention and quality instruction.</p>
+                </div>
+                <div class="about-intro-visual">
+                    <div class="about-visual-card">
+                        <i class="fas fa-award"></i>
+                        <h3>10+ Years</h3>
+                        <p>Of Excellence</p>
+                    </div>
+                    <div class="about-visual-card">
+                        <i class="fas fa-users"></i>
+                        <h3>500+</h3>
+                        <p>Students Enrolled</p>
+                    </div>
+                    <div class="about-visual-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>98%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card scroll-reveal">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide high-quality, accessible education that empowers students to achieve academic excellence and develop critical thinking skills. We strive to create a nurturing learning environment where every student can reach their full potential through innovative teaching methods and personalized attention.</p>
+                </div>
+                <div class="mv-card scroll-reveal" data-delay="200">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading private educational institution in Sri Lanka, recognized for academic excellence, innovative teaching, and producing well-rounded students who are prepared for higher education and successful careers. We envision a future where every child has access to world-class education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Advantages</span>
+                <h2 class="section-title">Why Choose Vidura College?</h2>
+                <p class="section-desc">Discover what makes us the preferred choice for parents and students</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card scroll-reveal" data-delay="0">
+                    <div class="why-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Teachers</h3>
+                    <p>Our faculty consists of highly qualified educators with years of experience and a passion for teaching.</p>
+                </div>
+                <div class="why-card scroll-reveal" data-delay="100">
+                    <div class="why-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personalized Attention</h3>
+                    <p>Small class sizes ensure every student receives individual attention and customized learning support.</p>
+                </div>
+                <div class="why-card scroll-reveal" data-delay="200">
+                    <div class="why-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Flexible Learning</h3>
+                    <p>Choose between online and physical classes based on your convenience and learning preferences.</p>
+                </div>
+                <div class="why-card scroll-reveal" data-delay="300">
+                    <div class="why-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Our students consistently achieve top grades with a 98% success rate in examinations.</p>
+                </div>
+                <div class="why-card scroll-reveal" data-delay="400">
+                    <div class="why-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Comprehensive Curriculum</h3>
+                    <p>We cover all major subjects with in-depth materials aligned with the national curriculum.</p>
+                </div>
+                <div class="why-card scroll-reveal" data-delay="500">
+                    <div class="why-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Student-Centered</h3>
+                    <p>Our teaching approach focuses on understanding each student's unique needs and learning style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/about.html', 'w', encoding='utf-8') as f:
+    f.write(about_html)
+
+print("about.html created successfully")
+
+# ==================== COURSES.HTML ====================
+courses_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Vidura College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Registration Successful!</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <h1 class="scroll-reveal">Our Courses</h1>
+            <p class="scroll-reveal">Explore our comprehensive subject offerings</p>
+        </div>
+    </section>
+
+    <!-- Grade Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar scroll-reveal">
+                <span class="filter-label">Filter by Grade:</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-grade="all">All Grades</button>
+                    <button class="filter-btn" data-grade="6">Grade 6</button>
+                    <button class="filter-btn" data-grade="7">Grade 7</button>
+                    <button class="filter-btn" data-grade="8">Grade 8</button>
+                    <button class="filter-btn" data-grade="9">Grade 9</button>
+                    <button class="filter-btn" data-grade="10">Grade 10</button>
+                    <button class="filter-btn" data-grade="11">Grade 11</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Mathematics -->
+                <div class="course-card scroll-reveal" data-grades="6,7,8,9,10,11">
+                    <div class="course-header math">
+                        <div class="course-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="course-badges">
+                            <span class="badge online"><i class="fas fa-laptop"></i> Online</span>
+                            <span class="badge physical"><i class="fas fa-building"></i> Physical</span>
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Mathematics</h3>
+                        <p>Master arithmetic, algebra, geometry, trigonometry, and advanced calculus with our expert instructors.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 2 hrs/week</span>
+                            <span><i class="fas fa-users"></i> Max 15</span>
+                        </div>
+                        <div class="course-grades">
+                            <span class="grade-tag">Grades 6-11</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-small enroll-btn">
+                            <span>Enroll Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Science -->
+                <div class="course-card scroll-reveal" data-grades="6,7,8,9,10,11">
+                    <div class="course-header science">
+                        <div class="course-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="course-badges">
+                            <span class="badge online"><i class="fas fa-laptop"></i> Online</span>
+                            <span class="badge physical"><i class="fas fa-building"></i> Physical</span>
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Science</h3>
+                        <p>Explore Physics, Chemistry, and Biology through theory, practical experiments, and interactive demonstrations.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 3 hrs/week</span>
+                            <span><i class="fas fa-users"></i> Max 12</span>
+                        </div>
+                        <div class="course-grades">
+                            <span class="grade-tag">Grades 6-11</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-small enroll-btn">
+                            <span>Enroll Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- English -->
+                <div class="course-card scroll-reveal" data-grades="6,7,8,9,10,11">
+                    <div class="course-header english">
+                        <div class="course-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="course-badges">
+                            <span class="badge online"><i class="fas fa-laptop"></i> Online</span>
+                            <span class="badge physical"><i class="fas fa-building"></i> Physical</span>
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <h3>English</h3>
+                        <p>Develop grammar, vocabulary, reading comprehension, writing skills, and spoken English fluency.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 2 hrs/week</span>
+                            <span><i class="fas fa-users"></i> Max 15</span>
+                        </div>
+                        <div class="course-grades">
+                            <span class="grade-tag">Grades 6-11</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-small enroll-btn">
+                            <span>Enroll Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tamil -->
+                <div class="course-card scroll-reveal" data-grades="6,7,8,9,10,11">
+                    <div class="course-header tamil">
+                        <div class="course-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="course-badges">
+                            <span class="badge online"><i class="fas fa-laptop"></i> Online</span>
+                            <span class="badge physical"><i class="fas fa-building"></i> Physical</span>
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Tamil</h3>
+                        <p>Learn Tamil language with reading, writing, grammar, literature, and cultural appreciation.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 2 hrs/week</span>
+                            <span><i class="fas fa-users"></i> Max 15</span>
+                        </div>
+                        <div class="course-grades">
+                            <span class="grade-tag">Grades 6-11</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-small enroll-btn">
+                            <span>Enroll Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="course-card scroll-reveal" data-grades="6,7,8,9,10,11">
+                    <div class="course-header history">
+                        <div class="course-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="course-badges">
+                            <span class="badge online"><i class="fas fa-laptop"></i> Online</span>
+                            <span class="badge physical"><i class="fas fa-building"></i> Physical</span>
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <h3>History</h3>
+                        <p>Journey through Sri Lankan and world history with engaging narratives, timelines, and critical analysis.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 2 hrs/week</span>
+                            <span><i class="fas fa-users"></i> Max 20</span>
+                        </div>
+                        <div class="course-grades">
+                            <span class="grade-tag">Grades 6-11</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-small enroll-btn">
+                            <span>Enroll Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/courses.html', 'w', encoding='utf-8') as f:
+    f.write(courses_html)
+
+print("courses.html created successfully")
+
+# ==================== TEACHERS.HTML ====================
+teachers_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Teachers - Vidura College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Action Successful!</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="teachers.html" class="active">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <h1 class="scroll-reveal">Our Teachers</h1>
+            <p class="scroll-reveal">Meet our team of expert educators</p>
+        </div>
+    </section>
+
+    <section class="teachers-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Faculty</span>
+                <h2 class="section-title">Dedicated & Qualified Educators</h2>
+                <p class="section-desc">Our teachers bring years of experience and passion to every lesson</p>
+            </div>
+            <div class="teachers-grid">
+                <div class="teacher-card scroll-reveal" data-delay="0">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar math-avatar">RP</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject math">Mathematics</span>
+                        <h3>Mr. Rajesh Perera</h3>
+                        <p class="teacher-qual">BSc Mathematics (Hons), University of Colombo</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 12 Years Experience</p>
+                        <p class="teacher-desc">Specializes in advanced mathematics and O/L exam preparation with a proven track record of A-grade results.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="100">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar science-avatar">SK</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject science">Science</span>
+                        <h3>Ms. Sanjeevi Kumar</h3>
+                        <p class="teacher-qual">MSc Chemistry, University of Peradeniya</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 8 Years Experience</p>
+                        <p class="teacher-desc">Expert in Physics, Chemistry, and Biology with innovative teaching methods and practical lab demonstrations.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="200">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar english-avatar">JF</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject english">English</span>
+                        <h3>Mrs. Jennifer Fernando</h3>
+                        <p class="teacher-qual">BA English Literature, University of Kelaniya</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 10 Years Experience</p>
+                        <p class="teacher-desc">Passionate about developing communication skills and creative writing abilities in young learners.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="300">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar tamil-avatar">KM</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject tamil">Tamil</span>
+                        <h3>Mr. Kandiah Murugan</h3>
+                        <p class="teacher-qual">BA Tamil, University of Jaffna</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 15 Years Experience</p>
+                        <p class="teacher-desc">Native Tamil speaker with deep knowledge of Tamil literature, grammar, and cultural heritage.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="400">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar history-avatar">NS</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject history">History</span>
+                        <h3>Ms. Nimali Silva</h3>
+                        <p class="teacher-qual">BA History (Hons), University of Colombo</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 7 Years Experience</p>
+                        <p class="teacher-desc">Brings history to life through storytelling and interactive learning experiences.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="500">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar math-avatar">AR</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject math">Mathematics</span>
+                        <h3>Mr. Aravind Raj</h3>
+                        <p class="teacher-qual">BSc Engineering, University of Moratuwa</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 6 Years Experience</p>
+                        <p class="teacher-desc">Engineering graduate who makes mathematics engaging with real-world applications and problem-solving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/teachers.html', 'w', encoding='utf-8') as f:
+    f.write(teachers_html)
+
+print("teachers.html created successfully")
+
+# ==================== TEACHERS.HTML ====================
+teachers_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Teachers - Vidura College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Action Successful!</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="teachers.html" class="active">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <h1 class="scroll-reveal">Our Teachers</h1>
+            <p class="scroll-reveal">Meet our team of expert educators</p>
+        </div>
+    </section>
+
+    <section class="teachers-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Faculty</span>
+                <h2 class="section-title">Dedicated & Qualified Educators</h2>
+                <p class="section-desc">Our teachers bring years of experience and passion to every lesson</p>
+            </div>
+            <div class="teachers-grid">
+                <div class="teacher-card scroll-reveal" data-delay="0">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar math-avatar">RP</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject math">Mathematics</span>
+                        <h3>Mr. Rajesh Perera</h3>
+                        <p class="teacher-qual">BSc Mathematics (Hons), University of Colombo</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 12 Years Experience</p>
+                        <p class="teacher-desc">Specializes in advanced mathematics and O/L exam preparation with a proven track record of A-grade results.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="100">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar science-avatar">SK</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject science">Science</span>
+                        <h3>Ms. Sanjeevi Kumar</h3>
+                        <p class="teacher-qual">MSc Chemistry, University of Peradeniya</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 8 Years Experience</p>
+                        <p class="teacher-desc">Expert in Physics, Chemistry, and Biology with innovative teaching methods and practical lab demonstrations.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="200">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar english-avatar">JF</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject english">English</span>
+                        <h3>Mrs. Jennifer Fernando</h3>
+                        <p class="teacher-qual">BA English Literature, University of Kelaniya</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 10 Years Experience</p>
+                        <p class="teacher-desc">Passionate about developing communication skills and creative writing abilities in young learners.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="300">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar tamil-avatar">KM</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject tamil">Tamil</span>
+                        <h3>Mr. Kandiah Murugan</h3>
+                        <p class="teacher-qual">BA Tamil, University of Jaffna</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 15 Years Experience</p>
+                        <p class="teacher-desc">Native Tamil speaker with deep knowledge of Tamil literature, grammar, and cultural heritage.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="400">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar history-avatar">NS</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject history">History</span>
+                        <h3>Ms. Nimali Silva</h3>
+                        <p class="teacher-qual">BA History (Hons), University of Colombo</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 7 Years Experience</p>
+                        <p class="teacher-desc">Brings history to life through storytelling and interactive learning experiences.</p>
+                    </div>
+                </div>
+
+                <div class="teacher-card scroll-reveal" data-delay="500">
+                    <div class="teacher-image">
+                        <div class="teacher-avatar math-avatar">AR</div>
+                        <div class="teacher-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-subject math">Mathematics</span>
+                        <h3>Mr. Aravind Raj</h3>
+                        <p class="teacher-qual">BSc Engineering, University of Moratuwa</p>
+                        <p class="teacher-exp"><i class="fas fa-clock"></i> 6 Years Experience</p>
+                        <p class="teacher-desc">Engineering graduate who makes mathematics engaging with real-world applications and problem-solving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/teachers.html', 'w', encoding='utf-8') as f:
+    f.write(teachers_html)
+
+print("teachers.html created successfully")
+
+# ==================== CONTACT.HTML ====================
+contact_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vidura College</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">V</div>
+            <div class="loader-text">Vidura College</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">Message Sent Successfully!</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">V</div>
+                <span>Vidura College</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="login.html">Student Login</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle Language">
+                    <span>EN</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <h1 class="scroll-reveal">Contact Us</h1>
+            <p class="scroll-reveal">Get in touch with Vidura College</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info scroll-reveal">
+                    <div class="contact-info-header">
+                        <span class="section-tag">Get In Touch</span>
+                        <h2>We'd Love to Hear From You</h2>
+                        <p>Have questions about our courses? Want to enroll? Reach out to us through any of the channels below.</p>
+                    </div>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Phone</h4>
+                                <p>0781536400</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>WhatsApp</h4>
+                                <p>0781536400</p>
+                                <a href="https://wa.me/94781536400" target="_blank" class="whatsapp-btn">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Email</h4>
+                                <p>info@vidracollege.lk</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Location</h4>
+                                <p>Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container scroll-reveal" data-delay="200">
+                    <div class="form-header">
+                        <h3>Send us a Message</h3>
+                        <p>Fill out the form below and we'll get back to you shortly.</p>
+                    </div>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="contactName" name="name" placeholder="Your name" required>
+                                </div>
+                                <span class="error-message" id="nameError">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+                                </div>
+                                <span class="error-message" id="contactEmailError">Please enter a valid email</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="contactPhone" name="phone" placeholder="07X XXX XXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-tag"></i>
+                                <select id="contactSubject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="enquiry">General Enquiry</option>
+                                    <option value="enrollment">Enrollment</option>
+                                    <option value="mathematics">Mathematics Classes</option>
+                                    <option value="science">Science Classes</option>
+                                    <option value="english">English Classes</option>
+                                    <option value="tamil">Tamil Classes</option>
+                                    <option value="history">History Classes</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <span class="error-message" id="subjectError">Please select a subject</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fas fa-comment"></i>
+                                <textarea id="contactMessage" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            </div>
+                            <span class="error-message" id="messageError">Please enter your message</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">Location</span>
+                <h2 class="section-title">Find Us</h2>
+                <p class="section-desc">Visit our institute in Sri Lanka</p>
+            </div>
+            <div class="map-container scroll-reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4047240.546031!2d79.0!3d7.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk"
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: 20px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-icon">V</div>
+                            <span>Vidura College</span>
+                        </a>
+                        <p>Empowering young minds through quality education since 2014.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/94781536400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Subjects</h4>
+                        <ul>
+                            <li><a href="courses.html">Mathematics</a></li>
+                            <li><a href="courses.html">Science</a></li>
+                            <li><a href="courses.html">English</a></li>
+                            <li><a href="courses.html">Tamil</a></li>
+                            <li><a href="courses.html">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> 0781536400</li>
+                            <li><i class="fab fa-whatsapp"></i> 0781536400</li>
+                            <li><i class="fas fa-envelope"></i> info@vidracollege.lk</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Sri Lanka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vidura College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/contact.html', 'w', encoding='utf-8') as f:
+    f.write(contact_html)
+
+print("contact.html created successfully")
+
+# ==================== STYLE.CSS ====================
+style_css = '''/* ============================================
+   VIDURA COLLEGE - STYLE.CSS
+   Modern Educational Website Styles
+   ============================================ */
+
+/* CSS Variables for Light/Dark Mode */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --secondary: #f59e0b;
+    --accent: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-dark: #0f172a;
+    --bg-dark-secondary: #1e293b;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --border-light: #f1f5f9;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    --font-primary: 'Poppins', sans-serif;
+    --font-display: 'Playfair Display', serif;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --border-light: #1e293b;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-primary); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; transition: background-color var(--transition-base), color var(--transition-base); }
+a { text-decoration: none; color: inherit; transition: color var(--transition-fast); }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; font-size: inherit; border: none; outline: none; background: transparent; }
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* Loader */
+.loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s ease; }
+.loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-content { text-align: center; }
+.loader-logo { width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; font-size: 2.5rem; font-weight: 800; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg); margin: 0 auto 20px; animation: loaderPulse 1.5s ease infinite; }
+@keyframes loaderPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.loader-text { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; letter-spacing: 2px; }
+.loader-bar { width: 200px; height: 4px; background: var(--border-color); border-radius: var(--radius-full); overflow: hidden; margin: 0 auto; }
+.loader-progress { width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: var(--radius-full); animation: loaderProgress 2s ease forwards; }
+@keyframes loaderProgress { 0% { width: 0%; } 50% { width: 70%; } 100% { width: 100%; } }
+
+/* Notification */
+.notification { position: fixed; top: 100px; right: -400px; z-index: 9998; transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+.notification.show { right: 24px; }
+.notification-content { display: flex; align-items: center; gap: 12px; padding: 16px 24px; background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border-left: 4px solid var(--accent); min-width: 300px; }
+.notification-content i { font-size: 1.5rem; color: var(--accent); }
+.notification-content span { font-weight: 600; color: var(--text-primary); }
+
+/* Navigation */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); transition: all var(--transition-base); }
+[data-theme="dark"] .navbar { background: rgba(15, 23, 42, 0.9); }
+.navbar.scrolled { box-shadow: var(--shadow-md); }
+.nav-container { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.25rem; color: var(--text-primary); }
+.logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); font-weight: 800; font-size: 1.25rem; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links a { padding: 8px 16px; border-radius: var(--radius-md); font-weight: 500; font-size: 0.9rem; color: var(--text-secondary); transition: all var(--transition-fast); position: relative; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); background: rgba(99, 102, 241, 0.1); }
+.nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 20px; height: 3px; background: var(--primary); border-radius: var(--radius-full); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.theme-toggle, .lang-toggle { width: 40px; height: 40px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); background: var(--bg-tertiary); transition: all var(--transition-fast); }
+.theme-toggle:hover, .lang-toggle:hover { background: var(--primary); color: white; transform: rotate(15deg); }
+.lang-toggle span { font-size: 0.75rem; font-weight: 700; }
+.mobile-menu-btn { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--text-primary); border-radius: var(--radius-full); transition: all var(--transition-fast); }
+.mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-lg); font-weight: 600; font-size: 0.95rem; transition: all var(--transition-fast); cursor: pointer; border: 2px solid transparent; }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5); }
+.btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+.btn-white { background: white; color: var(--primary); box-shadow: var(--shadow-lg); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+.btn-outline-white { background: transparent; color: white; border-color: rgba(255, 255, 255, 0.5); }
+.btn-outline-white:hover { background: white; color: var(--primary); border-color: white; }
+.btn-small { padding: 10px 20px; font-size: 0.85rem; }
+.btn-full { width: 100%; }
+
+/* Scroll Reveal */
+.scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* Hero */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 120px 24px 80px; }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); z-index: -2; }
+.hero-bg::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
+.hero-particles::before, .hero-particles::after { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); animation: float 20s infinite ease-in-out; }
+.hero-particles::before { top: -100px; right: -100px; }
+.hero-particles::after { bottom: -100px; left: -100px; animation-delay: -10s; }
+@keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 25% { transform: translate(30px, -30px) scale(1.1); } 50% { transform: translate(-20px, 20px) scale(0.9); } 75% { transform: translate(20px, 10px) scale(1.05); } }
+.hero-content { text-align: center; max-width: 800px; color: white; position: relative; z-index: 1; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: var(--radius-full); font-size: 0.9rem; font-weight: 500; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.2); }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
+.title-line { display: block; }
+.title-line.highlight { background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-slogan { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 300; opacity: 0.9; margin-bottom: 16px; }
+.hero-desc { font-size: 1rem; opacity: 0.8; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 600px; margin: 0 auto; }
+.stat-item { text-align: center; }
+.stat-number { font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 0.85rem; opacity: 0.8; font-weight: 500; }
+.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); }
+.scroll-mouse { width: 24px; height: 40px; border: 2px solid rgba(255, 255, 255, 0.5); border-radius: var(--radius-full); position: relative; }
+.scroll-wheel { width: 4px; height: 8px; background: white; border-radius: var(--radius-full); position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scrollWheel 2s infinite; }
+@keyframes scrollWheel { 0% { top: 8px; opacity: 1; } 100% { top: 24px; opacity: 0; } }
+
+/* Section Headers */
+.section-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.section-tag { display: inline-block; padding: 6px 16px; background: rgba(99, 102, 241, 0.1); color: var(--primary); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+.section-desc { color: var(--text-secondary); font-size: 1rem; }
+
+/* Subjects */
+.subjects-section { padding: 100px 0; background: var(--bg-secondary); }
+.subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.subject-card { background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px 24px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); transition: all var(--transition-base); position: relative; overflow: hidden; }
+.subject-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transform: scaleX(0); transition: transform var(--transition-base); }
+.subject-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.subject-card:hover::before { transform: scaleX(1); }
+.subject-icon { width: 70px; height: 70px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.75rem; color: white; transition: transform var(--transition-base); }
+.subject-card:hover .subject-icon { transform: scale(1.1) rotate(5deg); }
+.subject-icon.math { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.subject-icon.science { background: linear-gradient(135deg, #10b981, #34d399); }
+.subject-icon.english { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.subject-icon.tamil { background: linear-gradient(135deg, #ef4444, #f87171); }
+.subject-icon.history { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+.subject-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+.subject-card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+.subject-meta { display: flex; justify-content: center; gap: 16px; font-size: 0.8rem; color: var(--text-muted); }
+.subject-meta span { display: flex; align-items: center; gap: 4px; }
+
+/* Features */
+.features-section { padding: 100px 0; background: var(--bg-primary); }
+.features-wrapper { display: flex; flex-direction: column; gap: 80px; }
+.feature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.feature-block.reverse { direction: rtl; }
+.feature-block.reverse > * { direction: ltr; }
+.feature-visual { position: relative; display: flex; align-items: center; justify-content: center; min-height: 400px; border-radius: var(--radius-xl); overflow: hidden; }
+.online-visual { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); }
+.physical-visual { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.1)); }
+.feature-icon-large { width: 150px; height: 150px; border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; position: relative; z-index: 1; }
+.online-visual .feature-icon-large { background: linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3); }
+.physical-visual .feature-icon-large { background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3); }
+.floating-elements { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+.float-el { position: absolute; width: 50px; height: 50px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: var(--shadow-md); animation: floatEl 6s infinite ease-in-out; }
+.float-el:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; color: var(--primary); }
+.float-el:nth-child(2) { top: 60%; right: 15%; animation-delay: -2s; color: var(--secondary); }
+.float-el:nth-child(3) { bottom: 20%; left: 25%; animation-delay: -4s; color: var(--accent); }
+@keyframes floatEl { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
+.feature-content h3 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); }
+.feature-content p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; font-size: 1.05rem; }
+.feature-list { display: flex; flex-direction: column; gap: 12px; }
+.feature-list li { display: flex; align-items: center; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; }
+.feature-list li i { width: 24px; height: 24px; background: rgba(16, 185, 129, 0.1); color: var(--accent); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; }
+
+/* Testimonials */
+.testimonials-section { padding: 100px 0; background: var(--bg-secondary); overflow: hidden; }
+.testimonials-slider { position: relative; max-width: 900px; margin: 0 auto; }
+.testimonials-track { display: flex; gap: 24px; transition: transform 0.5s ease; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; padding: 20px 0; }
+.testimonials-track::-webkit-scrollbar { display: none; }
+.testimonial-card { flex: 0 0 100%; scroll-snap-align: center; background: var(--bg-card); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); position: relative; }
+.testimonial-quote { position: absolute; top: 24px; right: 24px; font-size: 2rem; color: var(--primary); opacity: 0.2; }
+.testimonial-text { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.author-avatar { width: 50px; height: 50px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+.author-info h4 { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+.author-info span { font-size: 0.85rem; color: var(--text-muted); }
+.testimonial-rating { display: flex; gap: 4px; color: var(--secondary); font-size: 0.9rem; }
+.testimonial-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
+.testimonial-btn { width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); box-shadow: var(--shadow-sm); }
+.testimonial-btn:hover { background: var(--primary); color: white; border-color: var(--primary); transform: scale(1.1); }
+.testimonial-dots { display: flex; gap: 8px; }
+.testimonial-dot { width: 10px; height: 10px; border-radius: var(--radius-full); background: var(--border-color); cursor: pointer; transition: all var(--transition-fast); }
+.testimonial-dot.active { background: var(--primary); width: 30px; border-radius: var(--radius-full); }
+
+/* Gallery */
+.gallery-section { padding: 100px 0; background: var(--bg-primary); }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 250px); gap: 16px; }
+.gallery-item { position: relative; border-radius: var(--radius-xl); overflow: hidden; cursor: pointer; transition: all var(--transition-base); }
+.gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow-xl); }
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgba(255, 255, 255, 0.8); }
+.gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; transition: opacity var(--transition-base); color: white; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay i { font-size: 2rem; }
+.gallery-overlay span { font-weight: 600; font-size: 1rem; }
+
+/* FAQ */
+.faq-section { padding: 100px 0; background: var(--bg-secondary); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: 12px; border: 1px solid var(--border-color); overflow: hidden; transition: all var(--transition-base); }
+.faq-item:hover { box-shadow: var(--shadow-md); }
+.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; font-size: 1rem; font-weight: 600; color: var(--text-primary); text-align: left; transition: all var(--transition-fast); }
+.faq-question i { transition: transform var(--transition-fast); color: var(--primary); }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq-item.active .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+.faq-answer p { color: var(--text-secondary); line-height: 1.7; }
+
+/* CTA */
+.cta-section { position: relative; padding: 100px 0; overflow: hidden; }
+.cta-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); z-index: -1; }
+.cta-bg::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.cta-content { text-align: center; color: white; max-width: 700px; margin: 0 auto; }
+.cta-content h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+.cta-content p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* Page Header */
+.page-header { position: relative; padding: 160px 0 80px; text-align: center; overflow: hidden; }
+.page-header-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); z-index: -1; }
+.page-header-bg::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.page-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: white; margin-bottom: 12px; }
+.page-header p { color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; }
+
+/* About Page */
+.about-section { padding: 80px 0; background: var(--bg-primary); }
+.about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-intro-text h2 { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; color: var(--text-primary); }
+.about-intro-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.about-intro-visual { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.about-visual-card { background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px 20px; text-align: center; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); transition: all var(--transition-base); }
+.about-visual-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+.about-visual-card i { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+.about-visual-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.about-visual-card p { font-size: 0.85rem; color: var(--text-muted); }
+.mission-vision-section { padding: 80px 0; background: var(--bg-secondary); }
+.mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.mv-card { background: var(--bg-card); border-radius: var(--radius-xl); padding: 48px 32px; text-align: center; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); transition: all var(--transition-base); }
+.mv-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+.mv-icon { width: 80px; height: 80px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px; }
+.mv-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); }
+.mv-card p { color: var(--text-secondary); line-height: 1.8; }
+.why-choose-section { padding: 80px 0; background: var(--bg-primary); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.why-card { background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); transition: all var(--transition-base); }
+.why-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); border-color: var(--primary); }
+.why-icon { width: 60px; height: 60px; border-radius: var(--radius-lg); background: rgba(99, 102, 241, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; transition: all var(--transition-base); }
+.why-card:hover .why-icon { background: var(--primary); color: white; transform: rotate(10deg); }
+.why-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+.why-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+/* Courses Page */
+.filter-section { padding: 40px 0 20px; background: var(--bg-secondary); }
+.filter-bar { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 20px; background: var(--bg-card); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+.filter-label { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
+.filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 20px; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); background: var(--bg-tertiary); border: 1px solid transparent; transition: all var(--transition-fast); }
+.filter-btn:hover, .filter-btn.active { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+.courses-section { padding: 40px 0 100px; background: var(--bg-secondary); }
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.course-card { background: var(--bg-card); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); transition: all var(--transition-base); display: flex; flex-direction: column; }
+.course-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.course-card.hidden { display: none; }
+.course-header { padding: 32px 24px; position: relative; display: flex; align-items: flex-start; justify-content: space-between; }
+.course-header.math { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.course-header.science { background: linear-gradient(135deg, #10b981, #34d399); }
+.course-header.english { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.course-header.tamil { background: linear-gradient(135deg, #ef4444, #f87171); }
+.course-header.history { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+.course-icon { width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; }
+.course-badges { display: flex; flex-direction: column; gap: 6px; }
+.badge { padding: 4px 10px; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+.badge.online { background: rgba(255, 255, 255, 0.2); color: white; }
+.badge.physical { background: rgba(255, 255, 255, 0.2); color: white; }
+.course-body { padding: 24px; flex: 1; }
+.course-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+.course-body p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+.course-meta { display: flex; gap: 16px; margin-bottom: 16px; }
+.course-meta span { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-muted); }
+.course-grades { display: flex; gap: 8px; flex-wrap: wrap; }
+.grade-tag { padding: 4px 12px; background: var(--bg-tertiary); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); }
+.course-footer { padding: 0 24px 24px; }
+
+/* Teachers Page */
+.teachers-section { padding: 80px 0 100px; background: var(--bg-secondary); }
+.teachers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.teacher-card { background: var(--bg-card); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); transition: all var(--transition-base); }
+.teacher-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+.teacher-image { position: relative; padding: 40px 24px 0; text-align: center; }
+.teacher-avatar { width: 100px; height: 100px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: white; margin: 0 auto; border: 4px solid var(--bg-card); box-shadow: var(--shadow-md); }
+.math-avatar { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.science-avatar { background: linear-gradient(135deg, #10b981, #34d399); }
+.english-avatar { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.tamil-avatar { background: linear-gradient(135deg, #ef4444, #f87171); }
+.history-avatar { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+.teacher-social { position: absolute; top: 20px; right: 20px; display: flex; gap: 8px; opacity: 0; transform: translateY(-10px); transition: all var(--transition-base); }
+.teacher-card:hover .teacher-social { opacity: 1; transform: translateY(0); }
+.teacher-social a { width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--bg-tertiary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-fast); }
+.teacher-social a:hover { background: var(--primary); color: white; }
+.teacher-info { padding: 24px; text-align: center; }
+.teacher-subject { display: inline-block; padding: 4px 14px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.teacher-subject.math { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
+.teacher-subject.science { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.teacher-subject.english { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.teacher-subject.tamil { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.teacher-subject.history { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.teacher-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.teacher-qual { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+.teacher-exp { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.teacher-exp i { color: var(--secondary); }
+.teacher-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* Login Page */
+.login-section { padding: 80px 0 100px; background: var(--bg-secondary); }
+.login-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.login-form-container { background: var(--bg-card); border-radius: var(--radius-xl); padding: 48px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+.login-header { text-align: center; margin-bottom: 32px; }
+.login-icon { width: 80px; height: 80px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px; }
+.login-header h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.login-header p { color: var(--text-muted); font-size: 0.95rem; }
+.login-form { display: flex; flex-direction: column; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+.input-wrapper { position: relative; display: flex; align-items: center; }
+.input-wrapper i:first-child { position: absolute; left: 16px; color: var(--text-muted); font-size: 0.9rem; }
+.input-wrapper input, .input-wrapper select, .input-wrapper textarea { width: 100%; padding: 14px 16px 14px 44px; border-radius: var(--radius-lg); border: 2px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); font-size: 0.95rem; transition: all var(--transition-fast); }
+.input-wrapper input:focus, .input-wrapper select:focus, .input-wrapper textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+.input-wrapper input::placeholder, .input-wrapper textarea::placeholder { color: var(--text-muted); }
+.textarea-wrapper textarea { padding-left: 44px; resize: vertical; min-height: 120px; }
+.toggle-password { position: absolute; right: 16px; color: var(--text-muted); font-size: 0.9rem; transition: color var(--transition-fast); }
+.toggle-password:hover { color: var(--primary); }
+.error-message { font-size: 0.8rem; color: var(--danger); display: none; }
+.form-group.error input, .form-group.error select, .form-group.error textarea { border-color: var(--danger); }
+.form-group.error .error-message { display: block; }
+.form-options { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.remember-me { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem; color: var(--text-secondary); }
+.remember-me input { display: none; }
+.checkmark { width: 18px; height: 18px; border: 2px solid var(--border-color); border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); flex-shrink: 0; }
+.remember-me input:checked + .checkmark { background: var(--primary); border-color: var(--primary); }
+.remember-me input:checked + .checkmark::after { content: '\\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: white; font-size: 0.6rem; }
+.forgot-password { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
+.forgot-password:hover { text-decoration: underline; }
+.login-divider { display: flex; align-items: center; gap: 16px; margin: 24px 0; color: var(--text-muted); font-size: 0.85rem; }
+.login-divider::before, .login-divider::after { content: ''; flex: 1; height: 1px; background: var(--border-color); }
+.login-social { text-align: center; }
+.login-social p { color: var(--text-secondary); font-size: 0.9rem; }
+.login-social a { color: var(--primary); font-weight: 600; }
+
+/* Dashboard Preview */
+.dashboard-preview { background: var(--bg-card); border-radius: var(--radius-xl); padding: 48px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+.preview-header { text-align: center; margin-bottom: 32px; }
+.preview-header h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.preview-header p { color: var(--text-muted); font-size: 0.9rem; }
+.preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.preview-card { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 24px; text-align: center; transition: all var(--transition-base); border: 1px solid var(--border-color); }
+.preview-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.preview-icon { width: 50px; height: 50px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin: 0 auto 12px; }
+.preview-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+.preview-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Contact Page */
+.contact-section { padding: 80px 0; background: var(--bg-secondary); }
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.contact-info-header { margin-bottom: 32px; }
+.contact-info-header h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+.contact-info-header p { color: var(--text-secondary); line-height: 1.7; }
+.contact-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.contact-card { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--bg-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); transition: all var(--transition-base); }
+.contact-card:hover { transform: translateX(5px); box-shadow: var(--shadow-md); }
+.contact-card-icon { width: 48px; height: 48px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.contact-card-icon.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.contact-card-content h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+.contact-card-content p { color: var(--text-secondary); font-size: 0.9rem; }
+.whatsapp-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 8px 16px; background: linear-gradient(135deg, #25d366, #128c7e); color: white; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; transition: all var(--transition-fast); }
+.whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+.contact-social h4 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+.social-links { display: flex; gap: 12px; }
+.social-links a { width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--bg-card); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 1.1rem; transition: all var(--transition-fast); box-shadow: var(--shadow-sm); }
+.social-links a:hover { background: var(--primary); color: white; border-color: var(--primary); transform: translateY(-3px); }
+.contact-form-container { background: var(--bg-card); border-radius: var(--radius-xl); padding: 48px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+.form-header { margin-bottom: 32px; }
+.form-header h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+.form-header p { color: var(--text-muted); font-size: 0.9rem; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.map-section { padding: 80px 0 100px; background: var(--bg-primary); }
+.map-container { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+
+/* Footer */
+.footer { background: var(--bg-dark); color: var(--text-light); }
+.footer-top { padding: 80px 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.footer-brand { max-width: 300px; }
+.footer-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.25rem; color: white; margin-bottom: 16px; }
+.footer-logo .logo-icon { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+.footer-brand p { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 40px; height: 40px; border-radius: var(--radius-full); background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; transition: all var(--transition-fast); }
+.footer-social a:hover { background: var(--primary); transform: translateY(-3px); }
+.footer-links h4 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 20px; }
+.footer-links ul { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; transition: all var(--transition-fast); }
+.footer-links a:hover { color: var(--primary-light); padding-left: 4px; }
+.footer-contact h4 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 20px; }
+.footer-contact ul { display: flex; flex-direction: column; gap: 12px; }
+.footer-contact li { display: flex; align-items: center; gap: 12px; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
+.footer-contact li i { color: var(--primary-light); width: 16px; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 24px 0; text-align: center; }
+.footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
+
+/* Back to Top */
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: var(--radius-full); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(20px); transition: all var(--transition-base); z-index: 999; }
+.back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .about-intro, .feature-block, .login-wrapper, .contact-wrapper, .mv-grid { grid-template-columns: 1fr; }
+    .feature-block.reverse { direction: ltr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 200px); }
+    .gallery-item.large { grid-column: span 2; grid-row: span 1; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { position: fixed; top: 72px; left: 0; width: 100%; background: var(--bg-card); flex-direction: column; padding: 24px; gap: 8px; box-shadow: var(--shadow-lg); transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all var(--transition-base); border-bottom: 1px solid var(--border-color); }
+    .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+    .mobile-menu-btn { display: flex; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .subjects-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .courses-grid { grid-template-columns: 1fr; }
+    .teachers-grid { grid-template-columns: 1fr; }
+    .preview-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand { max-width: 100%; }
+    .footer-social { justify-content: center; }
+    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .gallery-item.large { grid-column: span 1; grid-row: span 1; height: 200px; }
+    .form-row { grid-template-columns: 1fr; }
+    .filter-bar { flex-direction: column; align-items: flex-start; }
+    .filter-buttons { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; }
+    .about-intro-visual { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .hero { padding: 100px 16px 60px; }
+    .hero-title { font-size: 2rem; }
+    .stat-number { font-size: 1.8rem; }
+    .login-form-container, .dashboard-preview, .contact-form-container { padding: 32px 20px; }
+    .section-header { margin-bottom: 32px; }
+    .testimonial-card { padding: 24px; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons .btn { width: 100%; }
+}
+'''
+
+with open('/mnt/agents/output/style.css', 'w', encoding='utf-8') as f:
+    f.write(style_css)
+
+print("style.css created successfully")
+
+# ==================== SCRIPT.JS ====================
+script_js = '''/* ============================================
+   VIDURA COLLEGE - SCRIPT.JS
+   Interactive Features & Functionality
+   ============================================ */
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // LOADING ANIMATION
+    // ============================================
+    const loader = document.getElementById('loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 2000);
+    }
+
+    // ============================================
+    // NOTIFICATION SYSTEM
+    // ============================================
+    window.showNotification = function(message, type = 'success') {
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notification-text');
+        const icon = notification.querySelector('i');
+        
+        if (notification && notificationText) {
+            notificationText.textContent = message;
+            
+            // Update icon based on type
+            if (type === 'success') {
+                icon.className = 'fas fa-check-circle';
+                notification.querySelector('.notification-content').style.borderLeftColor = 'var(--accent)';
+            } else if (type === 'error') {
+                icon.className = 'fas fa-times-circle';
+                notification.querySelector('.notification-content').style.borderLeftColor = 'var(--danger)';
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    };
+
+    // ============================================
+    // STICKY NAVBAR
+    // ============================================
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // ============================================
+    // MOBILE MENU TOGGLE
+    // ============================================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // ============================================
+    // DARK MODE TOGGLE
+    // ============================================
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        updateThemeIcon(true);
+    }
+    
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcon(false);
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcon(true);
+            }
+        });
+    }
+    
+    function updateThemeIcon(isDark) {
+        const icon = darkModeToggle.querySelector('i');
+        if (icon) {
+            icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    }
+
+    // ============================================
+    // LANGUAGE TOGGLE
+    // ============================================
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function() {
+            const span = this.querySelector('span');
+            const currentLang = span.textContent;
+            
+            if (currentLang === 'EN') {
+                span.textContent = 'SI';
+                showNotification('Language switched to Sinhala (Demo)', 'success');
+            } else if (currentLang === 'SI') {
+                span.textContent = 'TA';
+                showNotification('Language switched to Tamil (Demo)', 'success');
+            } else {
+                span.textContent = 'EN';
+                showNotification('Language switched to English', 'success');
+            }
+        });
+    }
+
+    // ============================================
+    // SCROLL REVEAL ANIMATIONS
+    // ============================================
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('revealed');
+                }, delay);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    scrollRevealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // ============================================
+    // ANIMATED COUNTERS
+    // ============================================
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        counterObserver.observe(stat);
+    });
+    
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 60; // 60 frames at 60fps = 1 second
+        const duration = 2000; // 2 seconds
+        const stepTime = duration / 60;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, stepTime);
+    }
+
+    // ============================================
+    // TESTIMONIALS SLIDER
+    // ============================================
+    const testimonialsTrack = document.getElementById('testimonialsTrack');
+    const testPrev = document.getElementById('testPrev');
+    const testNext = document.getElementById('testNext');
+    const testDots = document.getElementById('testDots');
+    
+    if (testimonialsTrack && testPrev && testNext) {
+        const cards = testimonialsTrack.querySelectorAll('.testimonial-card');
+        let currentSlide = 0;
+        const totalSlides = cards.length;
+        
+        // Create dots
+        if (testDots) {
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'testimonial-dot' + (index === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(index));
+                testDots.appendChild(dot);
+            });
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            const cardWidth = cards[0].offsetWidth + 24; // Including gap
+            testimonialsTrack.scrollTo({
+                left: cardWidth * index,
+                behavior: 'smooth'
+            });
+            updateDots();
+        }
+        
+        function updateDots() {
+            if (testDots) {
+                const dots = testDots.querySelectorAll('.testimonial-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+        }
+        
+        testPrev.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlide);
+        });
+        
+        testNext.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        });
+        
+        // Auto-slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 5000);
+    }
+
+    // ============================================
+    // FAQ ACCORDION
+    // ============================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active', !isActive);
+            });
+        }
+    });
+
+    // ============================================
+    // GRADE FILTER (Courses Page)
+    // ============================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+    
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const grade = this.getAttribute('data-grade');
+            
+            // Filter cards
+            courseCards.forEach(card => {
+                if (grade === 'all') {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    const grades = card.getAttribute('data-grades');
+                    if (grades && grades.includes(grade)) {
+                        card.classList.remove('hidden');
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
+
+    // Add fadeIn keyframes dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ============================================
+    // LOGIN FORM VALIDATION
+    // ============================================
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail');
+            const password = document.getElementById('loginPassword');
+            let isValid = true;
+            
+            // Email validation
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                email.closest('.form-group').classList.remove('error');
+            }
+            
+            // Password validation
+            if (password.value.length < 6) {
+                password.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                password.closest('.form-group').classList.remove('error');
+            }
+            
+            if (isValid) {
+                showNotification('Login successful! Welcome back.', 'success');
+                // In a real app, you would send data to server here
+            }
+        });
+        
+        // Remove error on input
+        loginForm.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                this.closest('.form-group').classList.remove('error');
+            });
+        });
+    }
+
+    // Toggle password visibility
+    const togglePassword = document.getElementById('togglePassword');
+    if (togglePassword) {
+        togglePassword.addEventListener('click', function() {
+            const passwordInput = document.getElementById('loginPassword');
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                passwordInput.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        });
+    }
+
+    // Forgot password
+    const forgotPassword = document.getElementById('forgotPassword');
+    if (forgotPassword) {
+        forgotPassword.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Password reset link sent to your email!', 'success');
+        });
+    }
+
+    // ============================================
+    // CONTACT FORM VALIDATION
+    // ============================================
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName');
+            const email = document.getElementById('contactEmail');
+            const subject = document.getElementById('contactSubject');
+            const message = document.getElementById('contactMessage');
+            let isValid = true;
+            
+            // Name validation
+            if (name.value.trim().length < 2) {
+                name.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                name.closest('.form-group').classList.remove('error');
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                email.closest('.form-group').classList.remove('error');
+            }
+            
+            // Subject validation
+            if (!subject.value) {
+                subject.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                subject.closest('.form-group').classList.remove('error');
+            }
+            
+            // Message validation
+            if (message.value.trim().length < 10) {
+                message.closest('.form-group').classList.add('error');
+                isValid = false;
+            } else {
+                message.closest('.form-group').classList.remove('error');
+            }
+            
+            if (isValid) {
+                showNotification('Message sent successfully! We will contact you soon.', 'success');
+                contactForm.reset();
+            }
+        });
+        
+        // Remove error on input
+        contactForm.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                this.closest('.form-group').classList.remove('error');
+            });
+        });
+    }
+
+    // ============================================
+    // ENROLL BUTTON NOTIFICATIONS
+    // ============================================
+    const enrollButtons = document.querySelectorAll('.enroll-btn');
+    enrollButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            showNotification('Enrollment request submitted! We will contact you via WhatsApp.', 'success');
+        });
+    });
+
+    // ============================================
+    // BACK TO TOP BUTTON
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ============================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ============================================
+    // PARALLAX EFFECT FOR HERO
+    // ============================================
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroBg = hero.querySelector('.hero-bg');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    }
+
+    // ============================================
+    // GALLERY LIGHTBOX (Simple Preview)
+    // ============================================
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const label = this.querySelector('.gallery-overlay span').textContent;
+            showNotification(`Viewing: ${label} (Gallery feature coming soon!)`, 'success');
+        });
+    });
+
+    // ============================================
+    // ACTIVE NAV LINK HIGHLIGHTING
+    // ============================================
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
+    // ============================================
+    // KEYBOARD ACCESSIBILITY
+    // ============================================
+    document.addEventListener('keydown', function(e) {
+        // Escape key closes mobile menu
+        if (e.key === 'Escape') {
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        }
+    });
+
+    // ============================================
+    // PREFERS REDUCED MOTION
+    // ============================================
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) {
+        // Disable animations for users who prefer reduced motion
+        document.documentElement.style.setProperty('--transition-fast', '0s');
+        document.documentElement.style.setProperty('--transition-base', '0s');
+        document.documentElement.style.setProperty('--transition-slow', '0s');
+    }
+
+    console.log('Vidura College website initialized successfully!');
+});
+'''
+
+with open('/mnt/agents/output/script.js', 'w', encoding='utf-8') as f:
+    f.write(script_js)
+
+print("script.js created successfully")
+
+# Verify all files
+import os
+files = ['index.html', 'about.html', 'courses.html', 'teachers.html', 'login.html', 'contact.html', 'style.css', 'script.js']
+for f in files:
+    path = f'/mnt/agents/output/{f}'
+    size = os.path.getsize(path)
+    print(f"  {f}: {size:,} bytes")
